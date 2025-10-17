@@ -4,8 +4,8 @@
 
 <div class="container">
     <div class="header">
-        <h1>Leo Wahlund</h1>
-        <p class="smalTxt">Gameplay Programmer</p>
+        <h1>Elin Gammelli</h1>
+        <p class="smalTxt">Programmer</p>
     </div>
     <div class="navigator">
         <nav>
@@ -85,12 +85,15 @@
     
   /* Pointer svg */
     path{
-        stroke: #ECC977;
+        /* Line "banner" */
+        stroke: #dddddd;
     }
     .pointer{
+        /* Pointer on the */
         stroke: #ECE8E1;
     }
     a:hover{
+        /* Hover color of menu */
         color: #ECC977;
     }
     .container {
@@ -103,6 +106,7 @@
         margin-top: 5rem;
     }
     h1{
+        /* Name header */
         font-size: 3rem;
         color: #ECE8E1;
 	}
@@ -118,10 +122,11 @@
         justify-content: space-around;
     }
     .smalTxt{
+        /* Proffession header */
         font-size: .9rem;
         margin-top: 1rem;
         letter-spacing: .4rem;
-        color: #ECC977;
+        color: #d8d7d5; 
     }
     :global(a){
 		text-decoration: none;
