@@ -1,0 +1,12 @@
+To change background: 
+Switch out the img background in folder Elin_Gammelli\static\img
+
+To change colors of banner and pointer:
+In Elin_Gammelli\src\routes\+layout.svelte scroll down to <style> anf change the colors by hovering over the tiny squares 
+
+To change all the info of contact, about and portfolio stuff: Elin_Gammelli\src\lib\data\projects.js
+
+To run the project:
+npm i
+
+npm run dev
