@@ -114,12 +114,24 @@
       {#if activeProgramming}
       
       <div class="text">
-        <p class="content">{@html data.programText?.replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;"></a>`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
+        <p class="content">{@html data.programText?.replace(/!!(.*?)!!/g, (match, url) => {
+  if (url.endsWith('.mp4')) {
+    return `<video src="${url}" controls autoplay loop muted style="max-width: 1000px; max-height: 500px;"></video>`;
+  } else {
+    return `<a href="${url}" target="_blank"><img src="${url}" style="max-width: 1000px; max-height: 500px;"></a>`;
+  }
+}).replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;"></a>`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
       </div>
       
         {:else}
         <div class="text">
-          <p class="content">{@html data.designText?.replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;">`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
+          <p class="content">{@html data.designText?.replace(/!!(.*?)!!/g, (match, url) => {
+  if (url.endsWith('.mp4')) {
+    return `<video src="${url}" controls autoplay loop muted style="max-width: 1000px; max-height: 500px;"></video>`;
+  } else {
+    return `<a href="${url}" target="_blank"><img src="${url}" style="max-width: 1000px; max-height: 500px;"></a>`;
+  }
+}).replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;">`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
         </div>
       {/if}
       {#if data.link !== undefined}
@@ -130,7 +142,7 @@
         </a>
       {/if}
       {#if data.linkItch !== undefined}
-        <a id="bottom" class="link" href="{data.linkItch}" target="blank">View more on Itch.io
+        <a id="bottom" class="link" href="{data.linkItch}" target="blank">View the game at Itch.io
           <svg width="16" height="6" viewBox="0 0 16 6" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1.35935 2.99999H14.6407M14.6407 2.99999L12.3731 5.21354M14.6407 2.99999L12.3731 0.786438" stroke="#878787" stroke-linecap="round"/>
           </svg>

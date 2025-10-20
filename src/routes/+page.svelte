@@ -7,9 +7,16 @@ import { projects } from '../lib/data/projects';
 		{#each projects as project}
             <div class="projectContainer">
 				<div class="project">
-					
-					<div class="img" style= {`background: url('/img/${project.image}') no-repeat; background-size: cover;`}>
-						<div class="svg">				
+					<div class="img" style="position: relative; max-width: 794px; height: 100%; border: 2px solid #B58A4E;">
+					{#if project.image && project.image.endsWith('.mp4')}
+						<video autoplay muted loop playsinline
+							src={`/img/${project.image}`}
+							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+						</video>
+					{:else}
+						<div style={`background: url('/img/${project.image}') no-repeat; background-size: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: -1;`}></div>
+					{/if}
+						<div class="svg">					
 							<div class="textContainer">
 								<div class="text">
 									<h2>
@@ -40,17 +47,17 @@ import { projects } from '../lib/data/projects';
 
 <style>
 	h2 a{
-		color: #B58A4E;
+		color: #B58A4E; /* Color of the title of the previews */
 		font-weight: 700;
 	}
 	.tag{
 		font-size: .9rem;
 		font-weight: 700;
-		color: #B58A4E;
+		color: #B58A4E; /* color of the tags in boxes */
 	}
 	.svgPointer rect, path{
 		fill: #021826de;
-		stroke: #B58A4E;
+		stroke: #B58A4E; /* color of the arrow in the preivew box */
 	}
 	.container{
 		display: flex;
@@ -71,7 +78,7 @@ import { projects } from '../lib/data/projects';
 	.img{
 		max-width: 794px;
 		height: 100%;
-		border: 2px solid #B58A4E;
+		border: 2px solid #B58A4E; /* Border color of previews */
 
 	}
 	.svg{
