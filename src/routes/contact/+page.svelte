@@ -16,11 +16,11 @@ import { contact } from '../../lib/data/projects';
     </div>
     <div class="content">
         <p>Git: </p>
-        <a class="end" href="{contact.git}" target=”_blank”>LostmyCigar</a>
+        <a class="end" href="{contact.git}" target=”_blank”>Wizzeg</a>
     </div>
     <div class="content">
         <p>LinkedIn: </p>
-        <a class="end" href="{contact.linkedIn}" target=”_blank”>Leo Wahlund</a>
+        <a class="end" href="{contact.linkedIn}" target=”_blank”>Elin Gammelli</a>
     </div>
 </div>
 

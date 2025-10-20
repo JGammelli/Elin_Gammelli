@@ -1,16 +1,16 @@
 export const about = {
   title: "Hi, I'm Elin!",
   content:
-    "I have had a passion for games ever since my parents bought a Gameboy Advance and Pokemon LeafGreen cartridge. I love crafting mechanics, testing and improving them until they play and feel the way they should. I am a social, happy and driven person who works best in teams where communication is free flowing and clear. I am looking for a place where I can grow as a programmer and work together with a close knit team.",
+    "I enjoy problem solving and optimization, and I'm generally curious.",
   image: "",
 };
 
 export const contact = {
   title: "Reach out to me!",
-  git: "https://github.com/LostmyCigar",
-  email: "leo.wahlund@gmail.com",
-  phone: "+46 760 397 664",
-  linkedIn: "https://se.linkedin.com/in/leo-wahlund-628778201",
+  git: "https://github.com/wizzeg",
+  email: "eg.wizzw@gmail.com",
+  phone: "+46 72 053 60 94",
+  linkedIn: "https://www.linkedin.com/in/elin-gammelli-867365368/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B%2BRxACdp0SfexAh249oG2Ow%3D%3D",
 };
 
 export const projects = [

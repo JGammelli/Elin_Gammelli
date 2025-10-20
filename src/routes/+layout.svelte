@@ -5,7 +5,7 @@
 <div class="container">
     <div class="header">
         <h1>Elin Gammelli</h1>
-        <p class="smalTxt">Programmer</p>
+        <p class="smalTxt">Generalist Programmer and Technical Artist</p>
     </div>
     <div class="navigator">
         <nav>
