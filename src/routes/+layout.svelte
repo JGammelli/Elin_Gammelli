@@ -10,7 +10,7 @@
     <div class="navigator">
         <nav>
             <div class="navPointer">
-                {#if $page.url.toString() === 'https://leowahlund.netlify.app/about'}
+                {#if $page.url.toString() === 'https://elingammelli.netlify.app/about'}
                     <svg width="1402" height="80" viewBox="0 0 1402 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M419.432 53L449.058 79L478.685 53" stroke="#8E8E8E"/>
                         <path class="pointer" d="M434.535 53L449.639 66L464.743 53" stroke="#ff9d42"/>
@@ -29,7 +29,7 @@
                         <path d="M294.942 27L322.826 53" stroke="#8E8E8E"/>
                     </svg>   
                     {:else}
-                        {#if $page.url.toString() === 'https://leowahlund.netlify.app/contact'}                           
+                        {#if $page.url.toString() === 'https://elingammelli.netlify.app/contact'}                           
                             <svg width="1402" height="80" viewBox="0 0 1402 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M923.432 53L953.058 79L982.685 53" stroke="#8E8E8E"/>
                                 <path class="pointer" d="M938.535 53L953.639 66L968.743 53" stroke="#ff9d42"/>
@@ -69,9 +69,9 @@
                 {/if}                   
             </div>
             <ul>
-                <li><a href="/about" style={`color:${($page.url.toString() === 'https://leowahlund.netlify.app/about') ? '#ECC977' : ''}`}>ABOUT</a></li>
-                <li><a href="/" style={`color:${($page.url.toString() === 'https://leowahlund.netlify.app/') ? '#ECC977' : ''}`}>PORTFOLIO</a></li>
-                <li><a href="/contact" style={`color:${($page.url.toString() === 'https://leowahlund.netlify.app/contact') ? '#ECC977' : ''}`}>CONTACT</a></li>
+                <li><a href="/about" style={`color:${($page.url.toString() === 'https://elingammelli.netlify.app/about') ? '#ECC977' : ''}`}>ABOUT</a></li>
+                <li><a href="/" style={`color:${($page.url.toString() === 'https://elingammelli.netlify.app/') ? '#ECC977' : ''}`}>PORTFOLIO</a></li>
+                <li><a href="/contact" style={`color:${($page.url.toString() === 'https://elingammelli.netlify.app/contact') ? '#ECC977' : ''}`}>CONTACT</a></li>
             </ul>
         </nav>
     </div>

@@ -1,7 +1,7 @@
 export const about = {
   title: "Hi, I'm Elin!",
   content:
-    "I enjoy problem solving and optimization, and I'm generally curious.",
+    "I enjoy problem solving and optimization, and I'm a generally curious person.",
   image: "",
 };
 
