@@ -116,7 +116,7 @@
     fill: #ECE8E1;
   }
   path{
-    stroke: #B58A4D;
+    stroke: #ECE8E1;
   }
   p{
     line-height: 2;

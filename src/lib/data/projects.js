@@ -1,7 +1,7 @@
 export const about = {
   title: "Hi, I'm Elin!",
   content:
-    "I enjoy problem solving and optimization, and I'm a generally curious person.",
+    "With the goal of making games I started my studies in Skövde Högskola, with their \"Datavetenskap\"-program. When I studied single variable calculus and linear algebra, as extra courses, I realized just how useful mathematics would be for making games. With the realization, I started studiying at Umeå University for a Bachelors degree in Mathematics instead, with the addition of some computer science courses. I'm a generally curious person, and I enjoy problem solving and optimization.",
   image: "",
 };
 
@@ -9,7 +9,7 @@ export const contact = {
   title: "Reach out to me!",
   git: "https://github.com/wizzeg",
   email: "eg.wizzw@gmail.com",
-  phone: "+46 72 053 60 94",
+  phone: "+46 72 053 60 92",
   linkedIn: "https://www.linkedin.com/in/elin-gammelli-867365368/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B%2BRxACdp0SfexAh249oG2Ow%3D%3D",
 };
 

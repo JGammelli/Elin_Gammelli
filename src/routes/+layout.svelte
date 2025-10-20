@@ -137,6 +137,7 @@
         background: url('/img/background.jpg') no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        text-shadow: 1.25px 1.25px 1.75px rgb(0, 0, 0);
 	}
 	:global(*){
 		margin: 0 auto;

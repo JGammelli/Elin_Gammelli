@@ -7,7 +7,7 @@ import { projects } from '../lib/data/projects';
 		{#each projects as project}
             <div class="projectContainer">
 				<div class="project">
-					<div class="img" style="position: relative; max-width: 794px; height: 100%; border: 2px solid #B58A4E;">
+					<div class="img" style="position: relative; max-width: 794px; height: 100%; border: 2px solid #c0bcb5;">
 					{#if project.image && project.image.endsWith('.mp4')}
 						<video autoplay muted loop playsinline
 							src={`/img/${project.image}`}
@@ -47,17 +47,17 @@ import { projects } from '../lib/data/projects';
 
 <style>
 	h2 a{
-		color: #B58A4E;
+		color: #d8d7d5;
 		font-weight: 700;
 	}
 	.tag{
 		font-size: .9rem;
 		font-weight: 700;
-		color: #B58A4E;
+		color: #d8d7d5;
 	}
 	.svgPointer rect, path{
 		fill: #021826de;
-		stroke: #B58A4E;
+		stroke: #c0bcb5;
 	}
 	.container{
 		display: flex;
@@ -85,7 +85,7 @@ import { projects } from '../lib/data/projects';
 	.img{
 		max-width: 794px;
 		height: 100%;
-		border: 2px solid #B58A4E;
+		border: 2px solid #d8d7d5;
 
 	}
 	.svg{
@@ -147,7 +147,7 @@ import { projects } from '../lib/data/projects';
 		}
 			.svgPointer rect, path{
 			fill: #021826;
-			stroke: #B58A4E;
+			stroke: #d8d7d5;
 		}
 		@media (max-width: 780px) {
 
