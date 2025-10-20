@@ -123,7 +123,7 @@
     }
     .smalTxt{
         /* Proffession header */
-        font-size: .9rem;
+        font-size: 1rem;
         margin-top: 1rem;
         letter-spacing: .4rem;
         color: #d8d7d5; 
