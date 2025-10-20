@@ -51,6 +51,12 @@ import { contact } from '../../lib/data/projects';
         padding: 5rem;
         width: 756px;
         
+        /* Backgroundcolor behind text */
+        background-color: #00000050; 
+        border-radius: 25px;
+        box-shadow: 0 8px 32px 0 rgba(190, 122, 128, 0.185); 
+        backdrop-filter: blur( 6px ); 
+        -webkit-backdrop-filter: blur( 4px ); 
     }
     h2{
         margin-bottom: 3rem;

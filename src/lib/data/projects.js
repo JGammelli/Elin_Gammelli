@@ -2,7 +2,7 @@ export const about = {
   title: "Hi, I'm Elin!",
   content:
     "I have had a passion for games ever since my parents bought a Gameboy Advance and Pokemon LeafGreen cartridge. I love crafting mechanics, testing and improving them until they play and feel the way they should. I am a social, happy and driven person who works best in teams where communication is free flowing and clear. I am looking for a place where I can grow as a programmer and work together with a close knit team.",
-  image: "leo.jpg",
+  image: "",
 };
 
 export const contact = {

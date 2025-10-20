@@ -10,10 +10,9 @@
     console.log("CLICK");
     activeProgramming = !activeProgramming;
   }
-  // function boldify(content) {
-  //   return content.replace(/\*(.*?)\*/g, '<strong>$1</strong>');
-  // }
 </script>
+
+
 <div class="jumpContainer">
   <a href="/">
     <svg class="backArrow" width="16" height="6" viewBox="0 0 16 6" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,7 +33,7 @@
   
   
   <div class="backContainer">
-   
+  
   </div>
   <h1>{data.title}</h1>  
   <svg class="pointer"  width="97" height="35" viewBox="0 0 97 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -46,70 +45,6 @@
 
   <div class="projectContainer">
     <div class="projectItem">
-<!--       
-      {#if data.isDesign && data.isProgram}
-        <div>
-          <div class="roles">
-            <div>
-              <button id="rolePointer" on:click={changeRole}>
-                <p>Programming</p>
-                {#if activeProgramming}
-                <svg class="pointer"  width="97" height="35" viewBox="0 0 97 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M37.1014 1.99998L48.5 13.6221L59.8986 1.99998" stroke="#8E8E8E"/>
-                  <path d="M97 1.99998H59.8986" stroke="white" />
-                  <rect x="45.3182" y="4.35354" width="5" height="5" transform="rotate(-45 45.3182 4.35354)" fill="#589981"/>
-                  <path d="M37.1014 1.99998H0" stroke="white" />
-                </svg>
-                  {:else}
-                    <svg class="pointer" width="98" height="2" viewBox="0 0 98 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 1H98" stroke="#8E8E8E"/>
-                    </svg>
-                {/if}
-              </button>
-            </div>
-          
-            <div>
-              <button id="rolePointer" on:click={changeRole}>
-                <p>Design</p>
-                {#if !activeProgramming}
-                <svg class="pointer"  width="97" height="35" viewBox="0 0 97 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M37.1014 1.99998L48.5 13.6221L59.8986 1.99998" stroke="#8E8E8E"/>
-                  <path d="M97 1.99998H59.8986" stroke="white"/>
-                  <rect x="45.3182" y="4.35354" width="5" height="5" transform="rotate(-45 45.3182 4.35354)" fill="#589981"/>
-                  <path d="M37.1014 1.99998H0" stroke="white"/>
-                </svg>
-                  {:else}
-                    <svg class="pointer"  width="98" height="2" viewBox="0 0 98 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M0 1H98" stroke="#8E8E8E"/>
-                    </svg>
-                {/if}
-              </button>
-            </div>
-          </div>
-        </div>
-        {:else}
-          {#if data.isDesign && !data.isProgram}
-            <p>Design</p>
-            <svg class="pointer"  width="97" height="35" viewBox="0 0 97 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M37.1014 1.99998L48.5 13.6221L59.8986 1.99998" stroke="#8E8E8E"/>
-              <path d="M97 1.99998H59.8986" stroke="white" />
-              <rect x="45.3182" y="4.35354" width="5" height="5" transform="rotate(-45 45.3182 4.35354)" fill="#589981"/>
-              <path d="M37.1014 1.99998H0" stroke="white"/>
-            </svg>
-          {:else}
-            {#if !data.isDesign && data.isProgram}
-            
-            <p>Programming</p>
-            <svg class="pointer"  width="97" height="35" viewBox="0 0 97 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M37.1014 1.99998L48.5 13.6221L59.8986 1.99998" stroke="#8E8E8E"/>
-              <path d="M97 1.99998H59.8986" stroke="white" />
-              <rect x="45.3182" y="4.35354" width="5" height="5" transform="rotate(-45 45.3182 4.35354)" fill="#589981"/>
-              <path d="M37.1014 1.99998H0" stroke="white"/>
-            </svg>
-            
-            {/if}
-        {/if}
-      {/if} -->
 
       {#if activeProgramming}
       
@@ -144,9 +79,6 @@
         </a>
       {/if}
     </div>
-    <!-- <div class="projectItem">
-       <img src={`http://drive.google.com/uc?export=view&id=${data.image}`}>
-    </div> -->
   </div>
   
 </div>
@@ -154,6 +86,9 @@
 
 
 <style>
+
+ 
+
   h1{
     color: #ECC977;
   }
@@ -232,7 +167,17 @@
   }
   .projectContainer {
 		text-align: center;
+
+    /* Backgroundcolor behind text */
+    background-color: #00000050; 
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(190, 122, 128, 0.185); 
+    backdrop-filter: blur( 6px ); 
+    -webkit-backdrop-filter: blur( 4px ); 
 	}
+
+  
+
   .backArrow:hover{
     scale: 2.5;
   }

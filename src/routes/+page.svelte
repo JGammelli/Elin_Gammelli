@@ -59,10 +59,17 @@ import { projects } from '../lib/data/projects';
 		margin: 5rem 15vw;
 		text-align: center;
 
+		/* Backgroundcolor behind text */
+		background-color: #00000050; 
+		border-radius: 25px;
+		box-shadow: 0 8px 32px 0 rgba(190, 122, 128, 0.185); 
+		backdrop-filter: blur( 6px ); 
+		-webkit-backdrop-filter: blur( 4px ); 
 	}
 	.projectContainer{
 		width: 50%;
-		margin-bottom: 10rem;
+		margin-bottom: 2vw;
+		margin-top: 2vw;
 	}
 	.project{
 		margin: 0 2vw;

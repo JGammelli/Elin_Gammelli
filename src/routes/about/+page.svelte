@@ -2,13 +2,21 @@
 import { about } from '../../lib/data/projects';
 </script>
 
-<div>
+<div class="container">
     <h2>{about.title}</h2>
     <p>{about.content}</p>
     <img src={`/img/${about.image}`} alt="Profile">
 </div>
 
 <style>
+    .container{
+        /* Backgroundcolor behind text */
+        background-color: #00000050; 
+        border-radius: 25px;
+        box-shadow: 0 8px 32px 0 rgba(190, 122, 128, 0.185); 
+        backdrop-filter: blur( 6px ); 
+        -webkit-backdrop-filter: blur( 4px ); 
+    }
 
     div{
         padding: 5rem;
