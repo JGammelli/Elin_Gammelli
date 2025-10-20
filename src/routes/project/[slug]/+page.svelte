@@ -49,12 +49,24 @@
       {#if activeProgramming}
       
       <div class="text">
-        <p class="content">{@html data.programText?.replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;"></a>`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
+        <p class="content">{@html data.programText?.replace(/!!(.*?)!!/g, (match, url) => {
+  if (url.endsWith('.mp4')) {
+    return `<video src="${url}" controls autoplay loop muted style="max-width: 1000px; max-height: 500px;"></video>`;
+  } else {
+    return `<a href="${url}" target="_blank"><img src="${url}" style="max-width: 1000px; max-height: 500px;"></a>`;
+  }
+}).replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;"></a>`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
       </div>
       
         {:else}
         <div class="text">
-          <p class="content">{@html data.designText?.replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;">`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
+          <p class="content">{@html data.designText?.replace(/!!(.*?)!!/g, (match, url) => {
+  if (url.endsWith('.mp4')) {
+    return `<video src="${url}" controls autoplay loop muted style="max-width: 1000px; max-height: 500px;"></video>`;
+  } else {
+    return `<a href="${url}" target="_blank"><img src="${url}" style="max-width: 1000px; max-height: 500px;"></a>`;
+  }
+}).replace(/\*(.*?)\*/g, '<b style="font-weight: 700;">$1</b>').replace(/##(.*?)##/g, `<h2>$1</h2>`).replace(/!!(.*?)!!/g, `<a href="$1" target="_blank"><img src="$1" style="max-width: 1000px; max-height: 500px;">`).replace(/¤(.*?)¤/g, `<h2 id="code">$1</h2></a>`).replace(/__(.*?)__/g, `<div>$1</div>`)}</p>
         </div>
       {/if}
       {#if data.link !== undefined}
