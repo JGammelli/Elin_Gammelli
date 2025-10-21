@@ -47,7 +47,8 @@ export const projects = [
     image: `raymarch.mp4`,
     isDesign: false,
     isProgram: true,
-    programText: `!!/img/raymarch.mp4!!
+    programText: `##Raymarching in OpenGL and Unity##
+    !!/img/raymarch.mp4!!
     Simple Raymarching done in OpenGL and Unity, with normal calculations and shadowing from a single directional light.
     !!/img/raymarcherror.png!!
     To avoid the issue of reaching the maximum number of allowed steps without finding a collision, I added some simple optimization for the ray to adjust it's step size based on how close it was from reaching it's maximum number of steps. That optimization solved the issue of unresolved pixels.
@@ -113,7 +114,8 @@ export const projects = [
     image: `assembly.mp4`,
     isDesign: false,
     isProgram: true,
-    programText: `!!/img/assembly.mp4!!
+    programText: `##Almost snake, for arduino, in Assembly##
+    !!/img/assembly.mp4!!
     This is a partial snake, which I wrote in assembly. I quite enjoyed this project, as I feel I got a much better understanding of how programming and computers worked by making this tiny "game". This uses 8bit registers with two pair of high and low registers for 16bit addressing. I used some marshalling for the snake body pieces for memory effiency, which has the added benefit of appearing on the opposite edge when entering out of bounds.
     I did not create the emulator, however, the code should work on an arduino with correctly attached joystick and 8x8 led matrix.
           `,
