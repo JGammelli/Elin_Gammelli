@@ -96,7 +96,29 @@ export const projects = [
     I did not create the emulator, however, the code should work on an arduino with correctly attached joystick and 8x8 led matrix.
           `,
     link: "https://github.com/wizzeg/Snake-AVR-assembly", 
-    }/*,
+    },
+     {
+    title: `Ability System`,
+    content: `Programming C#, Unity`,
+    description: `A modular ability system for prototyping
+    `,
+    image: `abilitySystem.png`,
+    isDesign: false,
+    isProgram: true,
+    programText: `
+    ##*Modular Ability System*##
+    !!/img/abilitysystem.png!!
+    The idea is that the ability system can work with any type of game, be it turn based, real time, action combat, aoe-combat, tab-targeted, or pre-selected. Supporting most thinkable spells, by distributing the spell down into Effects. Targets can also behave differently, perhaps racial traits, flesh-type, mech-type, or perhaps they cannot take critical damge, or cannot take damage at all, or have positive/negative effects that amplify/protect from damage.
+    !!/img/typeset.png!!
+    The UnitTypeset takes in effects, and checks wether it is able to handle the context supplied, then sends it through the pipeline.
+    !!/img/UnitComponent.png!!
+    The UnitComponents are designed to be flexible, and be easy to create unit components out of. It has "hooks" and subscribers to notify on events that occur, for example, a health component might signal if health < 0, or to be notified when the health component handles a damage context (for UI).
+    !!/img/comps.png!!
+    Here are two unit components. They implement handlers for various contexts, and also use attributes to know the order of processing and which type of context it handles.
+    !!/img/dmgeffect.png!!
+    An example of an AbilityEffect, this effect prepares a DamageContext and sens it to the target. While the Attribute of ContextRequest is not yet implemented, the idea is that the ability will note which Contexts it should fetch, and insert a "preperation" phase to collect data from it's owners UnitTypeset (such as damage stats), and place it into the context list.    
+    `,
+    },/*,
      {
     title: `Tomb of Alar`,
     content: `Programming, Tools, Team, Unreal, TopDown`,
