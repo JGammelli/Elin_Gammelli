@@ -83,21 +83,7 @@ export const projects = [
           `,
     linkItch: "https://futuregames.itch.io/rosvik", 
     },
-     {
-    title: `avrboy snake`,
-    content: `Programming AVR 8/16bit assembly`,
-    description: `Snake without apples in assembly    
-    `,
-    image: `assembly.mp4`,
-    isDesign: false,
-    isProgram: true,
-    programText: `!!/img/assembly.mp4!!
-    This is a partial snake, which I wrote in assembly. I quite enjoyed this project, as I feel I got a much better understanding of how programming and computers worked by making this tiny "game". This uses 8bit registers with two pair of high and low registers for 16bit addressing. I used some marshalling for the snake body pieces for memory effiency, which has the added benefit of appearing on the opposite edge when entering out of bounds.
-    I did not create the emulator, however, the code should work on an arduino with correctly attached joystick and 8x8 led matrix.
-          `,
-    link: "https://github.com/wizzeg/Snake-AVR-assembly", 
-    },
-     {
+    {
     title: `Ability System`,
     content: `Programming C#, Unity`,
     description: `A modular ability system for prototyping
@@ -118,7 +104,22 @@ export const projects = [
     !!/img/dmgeffect.png!!
     An example of an AbilityEffect, this effect prepares a DamageContext and sens it to the target. While the Attribute of ContextRequest is not yet implemented, the idea is that the ability will note which Contexts it should fetch, and insert a "preperation" phase to collect data from it's owners UnitTypeset (such as damage stats), and place it into the context list.    
     `,
-    },/*,
+    },
+     {
+    title: `avrboy snake`,
+    content: `Programming AVR 8/16bit assembly`,
+    description: `Snake without apples in assembly    
+    `,
+    image: `assembly.mp4`,
+    isDesign: false,
+    isProgram: true,
+    programText: `!!/img/assembly.mp4!!
+    This is a partial snake, which I wrote in assembly. I quite enjoyed this project, as I feel I got a much better understanding of how programming and computers worked by making this tiny "game". This uses 8bit registers with two pair of high and low registers for 16bit addressing. I used some marshalling for the snake body pieces for memory effiency, which has the added benefit of appearing on the opposite edge when entering out of bounds.
+    I did not create the emulator, however, the code should work on an arduino with correctly attached joystick and 8x8 led matrix.
+          `,
+    link: "https://github.com/wizzeg/Snake-AVR-assembly", 
+    }
+     ,/*,
      {
     title: `Tomb of Alar`,
     content: `Programming, Tools, Team, Unreal, TopDown`,
