@@ -56,7 +56,8 @@ export const projects = [
     Some "optimization" for the raymarching steps, to be more aggressive as it approaches the maximum allowed number of steps.
     !!/img/raymarch.png!!
     Shadows were implemented in the most trivial way. After a ray has hit a surface, it will then traverse towards the single directional light and record it's closest approach. The closest approach is then smooth stepped to create a smooth border for the shadow. This has the negative effect of making the shadow encroach on the lit area, while realistically it should be the opposite.
-          `,
+    `,
+    link: "https://github.com/wizzeg/RaymarchSchool",
     },
     {
     title: `Røsvik`,
