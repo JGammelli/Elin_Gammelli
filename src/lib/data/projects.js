@@ -68,7 +68,7 @@ export const projects = [
     isDesign: false,
     isProgram: true,
     programText: `This was another group project.
-    Unfortunately, the lead designers did not let us use C++ in the project, so we had to do everyting in Blueprints.
+      After a lot of talk with the designers, for this project we came to an agreement that we programmers would only use Blueprints. So, unfortunately there's no C++ to show here.
       !!/img/gp3grass.mp4!!
       The most fun thing I did in this project was to make a neater grass sway vertex animation for the grass, I did this because the bundeled-in grass sway in UE5 does not look right.
       The grass meshes were 15 vertices per billboard, they were not vertex painted (which allowed me to test some fun workarounds). The grass samples the landscapes runtime virtual texture (RVT), to gain it's height position, for which I can then let the vertexes determine how high up they are relative to the ground, to adjust swaying strength.
@@ -85,27 +85,78 @@ export const projects = [
           `,
     linkItch: "https://futuregames.itch.io/rosvik", 
     },
+    //     {
+    // title: `Ability System`,
+    // content: `Programming C#, Unity`,
+    // description: `A modular ability system for prototyping
+    // `,
+    // image: `abilitySystem.png`,
+    // isDesign: false,
+    // isProgram: true,
+    // programText: `
+    // ##*Modular Ability System*##
+    // !!/img/abilitysystem.png!!
+    // The idea is that the ability system can work with any type of game, be it turn based, real time, action combat, aoe-combat, tab-targeted, or pre-selected. Supporting most thinkable spells, by distributing the spell down into Effects. Targets can also behave differently, perhaps racial traits, flesh-type, mech-type, or perhaps they cannot take critical damge, or cannot take damage at all, or have positive/negative effects that amplify/protect from damage.
+    // !!/img/typeset.png!!
+    // The UnitTypeset takes in effects, and checks wether it is able to handle the context supplied, then sends it through the pipeline.
+    // !!/img/UnitComponent.png!!
+    // The UnitComponents are designed to be flexible, and be easy to create unit components out of. It has "hooks" and subscribers to notify on events that occur, for example, a health component might signal if health < 0, or to be notified when the health component handles a damage context (for UI).
+    // !!/img/comps.png!!
+    // Here are two unit components. They implement handlers for various contexts, and also use attributes to know the order of processing and which type of context it handles.
+    // !!/img/dmgeffect.png!!
+    // An example of an AbilityEffect, this effect prepares a DamageContext and sens it to the target. While the Attribute of ContextRequest is not yet implemented, the idea is that the ability will note which Contexts it should fetch, and insert a "preperation" phase to collect data from it's owners UnitTypeset (such as damage stats), and place it into the context list.    
+    // `,
+    // },
     {
-    title: `Ability System`,
-    content: `Programming C#, Unity`,
-    description: `A modular ability system for prototyping
+    title: `Icicl Engine`,
+    content: `Engine development, C++, ECS, entt, OpenGL`,
+    description: `A game engine built on EnTT and OpenGL
     `,
-    image: `abilitySystem.png`,
+    image: `Physicssamplecomp.mp4`,
     isDesign: false,
     isProgram: true,
     programText: `
-    ##*Modular Ability System*##
-    !!/img/abilitysystem.png!!
-    The idea is that the ability system can work with any type of game, be it turn based, real time, action combat, aoe-combat, tab-targeted, or pre-selected. Supporting most thinkable spells, by distributing the spell down into Effects. Targets can also behave differently, perhaps racial traits, flesh-type, mech-type, or perhaps they cannot take critical damge, or cannot take damage at all, or have positive/negative effects that amplify/protect from damage.
-    !!/img/typeset.png!!
-    The UnitTypeset takes in effects, and checks wether it is able to handle the context supplied, then sends it through the pipeline.
-    !!/img/UnitComponent.png!!
-    The UnitComponents are designed to be flexible, and be easy to create unit components out of. It has "hooks" and subscribers to notify on events that occur, for example, a health component might signal if health < 0, or to be notified when the health component handles a damage context (for UI).
-    !!/img/comps.png!!
-    Here are two unit components. They implement handlers for various contexts, and also use attributes to know the order of processing and which type of context it handles.
-    !!/img/dmgeffect.png!!
-    An example of an AbilityEffect, this effect prepares a DamageContext and sens it to the target. While the Attribute of ContextRequest is not yet implemented, the idea is that the ability will note which Contexts it should fetch, and insert a "preperation" phase to collect data from it's owners UnitTypeset (such as damage stats), and place it into the context list.    
+    ##*Icicl Engine (ECS)*##
+    This engine is currently under development for a course, and has been in development for 13 weeks.
+
+    The engine is built with OpenGL and EnTT as it's core building blocks, aswell as multi-threading as a pillar. The intention was to explore ECS and data oriented design, to have a better understanding of Unity DOTS and UE5 Mass.
+    
+    In the parts of the engine where performance matters, I tried to keep data and cache locality in mind, but the editor is built ontop of weak/shared pointers and in an object oriented way, and runs much slower than engine in play mode.
+    
+    !!/img/deffered.png!!
+    The renderer is a deffered renderer, and runs on a seperate render thread, rendering the data supplied by the main game-thread of the previous frame. Asset loading such as .obj, textures, my .shdr and .mat files uses multi-threading, and stores "runtime mesh" and "runtime material" in a sorted vector, for cache friendly access when generating render calls. The render thread iterates through the generated 'render requests' and 'runtime materials' to in a O(N + M) forloop and automatically instances meshes/materials that can be, and markted to be, instanced. The runtime materials can be modified by systems/functions ingame, such as changing float values. The asset loading only supports .obj models.
+    !!/img/mats.png!!
+    
+    To prevent the 'user/programmer' from making critical mistakes, I created a systems wrapper, which is an interface for the 'user/programmer' to be able to enqueue systems/functions that act on a set of components, without gaining access to core entt objects.
+    !!/img/systemwrapper.png!!
+    The systems wrapper allows to query for entities with specificed components as read or write, exclude entities with specified components, and mark components for other access and modification.
+
+    Systems can either be one a single thread, as "each", or an another thread as "enqueued each", or on multiple threads of either a set number of threads, or by chunk sizes, through "enqueue parallel each". 
+
+    There's also a Systems context storage, which stores data in a thread-safe Systems context objects, in a map. This can then be accessed to create data that other systems may use at a later stage.
+    !!/img/paralleldata.png!!
+    To complement the Systems Context Storage, there's also a "enqueue parallel data each", which allows for data as an input, aswell as entity iteration order. That way, the 'user/programmer' can read data in parallel, then launch parallel threads (with an enqueue for the worker pool) to process the data, to then iterate through those same entities to write the data back.
+
+    Since writing to components that are already being read or written to causes data race, the Systems Wrapper automatically registers and detects read/write collisions, and forces a thread syncronization before letting the system start.
+   
+    There's an entity component creation/destruction buffer, which allows the user to create, or remove entities, and delete, or add components to existing or new entities, which is executed at a later synced state to avoid data races.
+    !!/img/ecb.png!!
+    
+    The editor itself is very rudimentary, but has some of the essential necessities. Such as 'prefabricates', duplication, parenting hierarchy, secene saving and loading, and component modification.
+    !!/img/editor.png!!
+
+    The drawing, saving and loading, aswell as in-engine creation adding components, is done fairly simply by the 'user/programmer', by adding components and using a macro to register them into necessary registers and factory.
+    !!/img/register.png!!
+    
+    A few examples of what the engine can do
+    !!/img/Movesamplecomp.mp4!!
+    125k cubes moving with a simple move script, all inviditually controlled.
+    !!/img/Physicssamplecomp.mp4!!
+    5k rigid bodies, with a vibe coded physics solver (due to unsufficient time in the course), with Spatial-partitoinig, AABB, OOBB, and collision manifold creation being multi-threaded, but the physics solver being single-threaded. The physics is due for adding features like gravity/attractors, and static rigid bodies, static/dynamic collision layers. Aswell as Landscape collisions and storing OBB collision data for entities or systems to access.
+
+
     `,
+        link: "https://github.com/wizzeg/IciclEngine",
     },
      {
     title: `avrboy snake`,
