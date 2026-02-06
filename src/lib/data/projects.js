@@ -2,7 +2,6 @@ export const about = {
   title: "Hi, I'm Elin!",
   content:
     "I obtained my bachelor degree in Mathematics at Umeå University, however, I started my studies in Skövde Högskola, with their \"Datavetenskap\"-program. When I studied single variable calculus and linear algebra, as extra courses, I realized just how useful mathematics would be for making games. With the realization, I started studiying at Umeå University for a Bachelors degree in Mathematics instead, with the addition of some computer science courses. Now I'm studying game programming at futuregames to get into the industry. I'm a generally curious person, and I enjoy problem solving and optimization.",
-  image: "",
 };
 
 export const contact = {
