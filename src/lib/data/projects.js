@@ -184,11 +184,11 @@ export const projects = [
     !!/img/deffered.png!!
 
 
-
     The renderer is a deffered renderer, and runs on a seperate render thread, rendering the data supplied by the main game-thread of the previous frame.
     Asset loading such as .obj, textures, my .shdr and .mat files uses multi-threading, and stores "runtime mesh" and "runtime material" in a sorted vector, for cache friendly access when generating render calls. The render thread iterates through the generated 'render requests' and 'runtime materials' to in a O(N + M) forloop and automatically instances meshes/materials that can be, and markted to be, instanced.
     The runtime materials can be modified by systems/functions ingame, such as changing float values. The asset loading only supports .obj models.
     
+
     !!/img/mats.png!!
     
 
