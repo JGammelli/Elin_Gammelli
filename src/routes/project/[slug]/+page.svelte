@@ -110,6 +110,7 @@
     align-self: flex-end;
   }
   .text{
+
     white-space: pre-wrap;
   }
   rect{
@@ -119,7 +120,8 @@
     stroke: #ECE8E1;
   }
   p{
-    line-height: 2;
+    text-align: left;
+    line-height: 1.25; /* I changed this one for line height*/
   }
   .pointer{
     scale: 1.2;
@@ -175,7 +177,7 @@
     scale: 1.8;
   }
   .projectContainer {
-		text-align: center;
+
 
     /* Backgroundcolor behind text */
     background-color: #00000050; 

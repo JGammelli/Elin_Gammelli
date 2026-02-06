@@ -23,17 +23,39 @@ export const projects = [
     isProgram: true,
     programText: `##Features of the computeshaders, shaders, and gameplay integration,##
       !!/img/gp2.mp4!!
+
       This was a very exciting project for me, as this was the first time I got to work with, and learn, shaders and compute shaders. The project lasted just under four weeks, with a proof of concept needed within 2 weeks.
       The GDC talk for "Kena bridge of Spirits" was a great source for inspiration of implementation.
       To make this easier for designers and programmers to use, *I made video tutorials* to help them.
+      
+
+
+
       !!/img/gp2move.mp4!!
-      To achive the effect of light spreading, I used a texture, which represented the propogated light in the red channel in argb2101010 texture, light height in the blue channel, and lightsource in the alpha channel. A game object was responsible for calculating the XY world position as well as the Z wolrd position for the texture, also to follow the player. As the player moves, the offset also has to move with the player, this requires the texture pixels to move aswell. Therefore, the offset only moved if the player had moved sufficiently far away from previously calculated position.
+
+      To achive the effect of light spreading, I used a texture, which represented the propogated light in the red channel in argb2101010 texture, light height in the blue channel, and lightsource in the alpha channel.
+      A game object was responsible for calculating the XY world position as well as the Z wolrd position for the texture, also to follow the player. As the player moves, the offset also has to move with the player, this requires the texture pixels to move aswell. Therefore, the offset only moved if the player had moved sufficiently far away from previously calculated position.
+      
+
+
+
       !!/img/invisblending.png!!
+
       To transfer data to my shaders for monochrome, visible, and invisible effects, I created a shader manager game object, which transfered this data to each material of those shaders. Then, in the shaders I compared the fragment world position with the propogated light texture world position to determine alpha, alpha clipping, and if the texture should be monochrome or not.
       The shader manager was also responsible to update and validate the game object light sources(which handeled their initial registration by themselves).
+      
+      
+
+
       !!/img/gp2delegate.png!!
+
       The light delegates similarly registered themselves to the shader manager, which then kept track of them. These performed asynchronous GPU read backs every few frames, to then delegate a read light value in the world, and forwarded it to linked light sources.
+      
+      
+
+
       !!/img/gp2height.png!!
+
       Since the world z height was tracked, and mapped in the texture, I could calculate, to some degree, how much light/color should be spread upwards (or technically limit the height). Of course, this causes issue if multiple lights are close by, which could be resolved in multiple ways.
           `,
     linkItch: "https://futuregames.itch.io/lanthera", 
@@ -48,12 +70,25 @@ export const projects = [
     isProgram: true,
     programText: `##Raymarching in OpenGL and Unity##
     !!/img/raymarch.mp4!!
+
     Simple Raymarching done in OpenGL and Unity, with normal calculations and shadowing from a single directional light.
+    
+
+
     !!/img/raymarcherror.png!!
+
     To avoid the issue of reaching the maximum number of allowed steps without finding a collision, I added some simple optimization for the ray to adjust it's step size based on how close it was from reaching it's maximum number of steps. That optimization solved the issue of unresolved pixels.
+    
+
+
     !!/img/raymarchfix.png!!
+
     Some "optimization" for the raymarching steps, to be more aggressive as it approaches the maximum allowed number of steps.
+    
+
+
     !!/img/raymarch.png!!
+
     Shadows were implemented in the most trivial way. After a ray has hit a surface, it will then traverse towards the single directional light and record it's closest approach. The closest approach is then smooth stepped to create a smooth border for the shadow. This has the negative effect of making the shadow encroach on the lit area, while realistically it should be the opposite.
     `,
     link: "https://github.com/wizzeg/RaymarchSchool",
@@ -68,18 +103,42 @@ export const projects = [
     isProgram: true,
     programText: `This was another group project.
       After a lot of talk with the designers, for this project we came to an agreement that we programmers would only use Blueprints. So, unfortunately there's no C++ to show here.
+      
+
+
       !!/img/gp3grass.mp4!!
+
       The most fun thing I did in this project was to make a neater grass sway vertex animation for the grass, I did this because the bundeled-in grass sway in UE5 does not look right.
       The grass meshes were 15 vertices per billboard, they were not vertex painted (which allowed me to test some fun workarounds). The grass samples the landscapes runtime virtual texture (RVT), to gain it's height position, for which I can then let the vertexes determine how high up they are relative to the ground, to adjust swaying strength.
       I used PrismaticaDev's "Simple-ish Grass Wind" youtube video as a large inspiration, but it was a little difficult to quite see what he did, so much of it was improvised (once I got the idea of how I'd do it).
       I also used a precumputed horizontal to vertical ratio based on the horizontal grass sway, to tame the visible stretching the grass would otherwise be subjected to.
+      
+
+
+
       !!/img/gp3optimize.png!!
+
       I put in effort to optimize the grass, as there was a lot of grass visible. Without the vertex pain, I needed to sample the lanscape height data from the RVT (object position does not work here). One significant issue was that to sample the RVT in the vertex shader, I would need to manually set this up sampling, or touch the RVT in the fragment shader. To circumvent both of these issues, I extended the colored RVT and placed this information in unused channels.
+      
+
+
+
       !!/img/gp3rvt.png!!
+
       As seen above, I could place both world height and a shadow masking strength into the unused channels roughness and spectular (worldheight is not a real channel here). This meant I only needed to sample a single RVT for all the data I needed.
+      
+
+
+
       !!/img/gp3shadow.png!!
+
       As can be observed, with some difficulty, the grass in the shadow is not properly shadowed. This was an issue caused by using an unlit shader for the grass, as a lit shader did not work well with the billboard grass or the ovral aesthetic. To handle this issue, I utilized another mask in the landscaping tool, which was written into the RVT as seen previously, and then sampled in the fragment shader to darken the grass. This meant, static deeper shadows could be painted in through the landscape.
+      
+
+
+
       !!/img/gp3masks.png!!
+
       Since some suggested we use PCG, I wanted to learn to use it. Though, we still had an enviornmental artist who I did not want to steal work from, I created masks for the landscape material that would allow the artist to paint in various things, such as rocks, grass, branches, and trees. After painted in, PCG would use probability for positions with overlapping masks to generate appropriate meshes (note: trees and rocks did not have centered pivots, causing issues). I also created a scaling mask, so that it was easy to increase scale in certain areas, or decrease scale.
           `,
     linkItch: "https://futuregames.itch.io/rosvik", 
@@ -123,34 +182,67 @@ export const projects = [
     In the parts of the engine where performance matters, I tried to keep data and cache locality in mind, but the editor is built ontop of weak/shared pointers and in an object oriented way, and runs much slower than engine in play mode.
     
     !!/img/deffered.png!!
-    The renderer is a deffered renderer, and runs on a seperate render thread, rendering the data supplied by the main game-thread of the previous frame. Asset loading such as .obj, textures, my .shdr and .mat files uses multi-threading, and stores "runtime mesh" and "runtime material" in a sorted vector, for cache friendly access when generating render calls. The render thread iterates through the generated 'render requests' and 'runtime materials' to in a O(N + M) forloop and automatically instances meshes/materials that can be, and markted to be, instanced. The runtime materials can be modified by systems/functions ingame, such as changing float values. The asset loading only supports .obj models.
+
+
+
+    The renderer is a deffered renderer, and runs on a seperate render thread, rendering the data supplied by the main game-thread of the previous frame.
+    Asset loading such as .obj, textures, my .shdr and .mat files uses multi-threading, and stores "runtime mesh" and "runtime material" in a sorted vector, for cache friendly access when generating render calls. The render thread iterates through the generated 'render requests' and 'runtime materials' to in a O(N + M) forloop and automatically instances meshes/materials that can be, and markted to be, instanced.
+    The runtime materials can be modified by systems/functions ingame, such as changing float values. The asset loading only supports .obj models.
+    
     !!/img/mats.png!!
     
+
+
     To prevent the 'user/programmer' from making critical mistakes, I created a systems wrapper, which is an interface for the 'user/programmer' to be able to enqueue systems/functions that act on a set of components, without gaining access to core entt objects.
+    
     !!/img/systemwrapper.png!!
+    
+
+
     The systems wrapper allows to query for entities with specificed components as read or write, exclude entities with specified components, and mark components for other access and modification.
 
     Systems can either be one a single thread, as "each", or an another thread as "enqueued each", or on multiple threads of either a set number of threads, or by chunk sizes, through "enqueue parallel each". 
 
     There's also a Systems context storage, which stores data in a thread-safe Systems context objects, in a map. This can then be accessed to create data that other systems may use at a later stage.
+    
+
+
     !!/img/paralleldata.png!!
+
     To complement the Systems Context Storage, there's also a "enqueue parallel data each", which allows for data as an input, aswell as entity iteration order. That way, the 'user/programmer' can read data in parallel, then launch parallel threads (with an enqueue for the worker pool) to process the data, to then iterate through those same entities to write the data back.
 
     Since writing to components that are already being read or written to causes data race, the Systems Wrapper automatically registers and detects read/write collisions, and forces a thread syncronization before letting the system start.
    
     There's an entity component creation/destruction buffer, which allows the user to create, or remove entities, and delete, or add components to existing or new entities, which is executed at a later synced state to avoid data races.
+    
     !!/img/ecb.png!!
     
+
+
+
     The editor itself is very rudimentary, but has some of the essential necessities. Such as 'prefabricates', duplication, parenting hierarchy, secene saving and loading, and component modification.
+    
     !!/img/editor.png!!
 
+
+
+
     The drawing, saving and loading, aswell as in-engine creation adding components, is done fairly simply by the 'user/programmer', by adding components and using a macro to register them into necessary registers and factory.
+    
     !!/img/register.png!!
     
+
+
+
+
     A few examples of what the engine can do
+
     !!/img/Movesamplecomp.mp4!!
+
     125k cubes moving with a simple move script, all inviditually controlled.
+
     !!/img/Physicssamplecomp.mp4!!
+    
     5k rigid bodies, with a vibe coded physics solver (due to unsufficient time in the course), with Spatial-partitoinig, AABB, OOBB, and collision manifold creation being multi-threaded, but the physics solver being single-threaded. The physics is due for adding features like gravity/attractors, and static rigid bodies, static/dynamic collision layers. Aswell as Landscape collisions and storing OBB collision data for entities or systems to access.
 
 

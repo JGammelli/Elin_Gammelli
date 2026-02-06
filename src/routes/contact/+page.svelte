@@ -59,6 +59,7 @@ import { contact } from '../../lib/data/projects';
         -webkit-backdrop-filter: blur( 4px ); 
     }
     h2{
+        
         margin-bottom: 3rem;
     }
     @media (max-width: 1024px) {
@@ -78,6 +79,7 @@ import { contact } from '../../lib/data/projects';
             width: 100vw;
         }
         h2{
+            text-align: left;
             margin-top: 4rem;
         }
 
