@@ -9,7 +9,7 @@ export const contact = {
   git: "https://github.com/wizzeg",
   email: "eg.wizzw@gmail.com",
   phone: "+46 72 053 60 92",
-  linkedIn: "https://www.linkedin.com/in/elin-gammelli-867365368/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B%2BRxACdp0SfexAh249oG2Ow%3D%3D",
+  linkedIn: "https://www.linkedin.com/in/elin-gammelli-867365368/",
 };
 
 export const projects = [
