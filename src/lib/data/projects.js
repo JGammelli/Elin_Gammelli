@@ -167,7 +167,7 @@ export const projects = [
     // },
     {
     title: `Icicl Engine`,
-    content: `Engine development, C++, ECS, entt, OpenGL`,
+    content: `Engine development, C++, ECS, entt, OpenGL, Data Oriented Design`,
     description: `A game engine built on EnTT and OpenGL
     `,
     image: `Physicssamplecomp.mp4`,
@@ -243,7 +243,7 @@ export const projects = [
 
     !!/img/Physicssamplecomp.mp4!!
     
-    5k rigid bodies, with a vibe coded physics solver (due to unsufficient time in the course), with Spatial-partitoinig, AABB, OOBB, and collision manifold creation being multi-threaded, but the physics solver being single-threaded. The physics is due for adding features like gravity/attractors, and static rigid bodies, static/dynamic collision layers. Aswell as Landscape collisions and storing OBB collision data for entities or systems to access.
+    5k rigid bodies, with a vibe coded physics solver (due to insufficient time in the course), with Spatial-partitoinig, AABB, OOBB, and collision manifold creation being multi-threaded, but the physics solver being single-threaded. The physics is due for adding features like gravity/attractors, and static rigid bodies, static/dynamic collision layers. Aswell as Landscape collisions and storing OBB collision data for entities or systems to access.
 
 
     `,
