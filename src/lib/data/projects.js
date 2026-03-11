@@ -170,12 +170,14 @@ export const projects = [
     content: `Engine development, C++, ECS, entt, OpenGL, Data Oriented Design`,
     description: `A game engine built on EnTT and OpenGL
     `,
-    image: `Physicssamplecomp.mp4`,
+    image: `Iciclenginesmall.mp4`,
     isDesign: false,
     isProgram: true,
     programText: `
     ##*Icicl Engine (ECS)*##
-    This engine is currently under development for a course, and has been in development for 13 weeks.
+    This engine was developed over 16 weeks, with a fair amount of cut corners to make make it within 16 weeks.
+
+    You can play the Demo including with the Editor from the Release tab on Github.
 
     The engine is built with OpenGL and EnTT as it's core building blocks, aswell as multi-threading as a pillar. The intention was to explore ECS and data oriented design, to have a better understanding of Unity DOTS and UE5 Mass.
     
@@ -235,15 +237,11 @@ export const projects = [
 
 
 
-    A few examples of what the engine can do
+    A short reel of features of the Game Engine, it's capable of making small game learning projects.
 
-    !!/img/Movesamplecomp.mp4!!
+    !!/img/Iciclenginesmall.mp4!!
 
-    125k cubes moving with a simple move script, all inviditually controlled.
-
-    !!/img/Physicssamplecomp.mp4!!
-    
-    5k rigid bodies, with a vibe coded physics solver (due to insufficient time in the course), with Spatial-partitoinig, AABB, OOBB, and collision manifold creation being multi-threaded, but the physics solver being single-threaded. The physics is due for adding features like gravity/attractors, and static rigid bodies, static/dynamic collision layers. Aswell as Landscape collisions and storing OBB collision data for entities or systems to access.
+    If entities do not have a renderable component, nor parenting, the limit for 60 fps is much higher than 100k entities.
 
 
     `,
